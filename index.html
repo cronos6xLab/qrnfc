@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cronos6xlab · Exhibidores QR NFC para reseñas de Google</title>
 <meta name="description" content="Exhibidores QR/NFC para que tus clientes dejen su reseña en Google antes de levantarse de la mesa. Pago único. Envío a todo México.">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -490,11 +491,15 @@ p{margin:0}
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;
 }
 
-/* ============ REVEAL ============ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
+/* ============ REVEAL (progressive enhancement) ============ */
+.reveal{opacity:1;transform:none}
+html.js .reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+}
+html.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
+  html.js .reveal{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
   .scroll-hint{animation:none}
 }
@@ -553,19 +558,15 @@ p{margin:0}
           </div>
           <div class="qr-box">
             <svg viewBox="0 0 21 21" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true">
-              <!-- finder TL -->
               <rect x="0" y="0" width="7" height="1"/><rect x="0" y="6" width="7" height="1"/>
               <rect x="0" y="0" width="1" height="7"/><rect x="6" y="0" width="1" height="7"/>
               <rect x="2" y="2" width="3" height="3"/>
-              <!-- finder TR -->
               <rect x="14" y="0" width="7" height="1"/><rect x="14" y="6" width="7" height="1"/>
               <rect x="14" y="0" width="1" height="7"/><rect x="20" y="0" width="1" height="7"/>
               <rect x="16" y="2" width="3" height="3"/>
-              <!-- finder BL -->
               <rect x="0" y="14" width="7" height="1"/><rect x="0" y="20" width="7" height="1"/>
               <rect x="0" y="14" width="1" height="7"/><rect x="6" y="14" width="1" height="7"/>
               <rect x="2" y="16" width="3" height="3"/>
-              <!-- datos -->
               <rect x="8" y="0" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/>
               <rect x="12" y="0" width="1" height="1"/><rect x="9" y="3" width="1" height="1"/>
               <rect x="11" y="4" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/>
@@ -638,12 +639,12 @@ p{margin:0}
 <!-- ================= STATS + CASOS ================= -->
 <section class="stats sec">
   <div class="wrap">
-    <div class="stats-head reveal">
+    <div class="stats-head">
       <span class="eyebrow on-dark"><span class="dot"></span>Nuestros números</span>
       <h2 class="h2" style="margin-top:18px">Esto llevan hechas nuestras placas desde la primera que instalamos</h2>
     </div>
 
-    <div class="stat-row reveal">
+    <div class="stat-row">
       <div class="stat">
         <div class="big">5,915</div>
         <div class="lbl">clientes que llegaron a escribir su reseña en Google</div>
@@ -658,12 +659,12 @@ p{margin:0}
       </div>
     </div>
 
-    <div class="reveal" style="margin-bottom:26px">
+    <div style="margin-bottom:26px">
       <span class="eyebrow on-dark"><span class="dot"></span>Algunos casos de éxito</span>
       <p class="lead on-dark" style="margin-top:14px;font-size:16px">Resultados en tres negocios distintos. Cada número son reseñas nuevas en su Google.</p>
     </div>
 
-    <div class="cases reveal">
+    <div class="cases">
       <div class="case">
         <div class="case-name">Molino Restaurante</div>
         <div class="case-num">216</div>
@@ -687,7 +688,7 @@ p{margin:0}
 <section class="problem sec">
   <div class="wrap">
     <div class="problem-grid">
-      <div class="reveal">
+      <div>
         <span class="eyebrow"><span class="dot"></span>¿Y si no funciona?</span>
         <h2 class="h2" style="margin-top:18px">El de enfrente no es mejor que tú. Nada más se ve mejor en Google</h2>
         <div class="quote-card" style="margin-top:28px">
@@ -695,7 +696,7 @@ p{margin:0}
           <div class="who">— Lo que te dicen en la mesa… y se les olvida de camino a casa.</div>
         </div>
       </div>
-      <div class="problem-copy reveal">
+      <div class="problem-copy">
         <p>No es mala voluntad: <strong>buscarte en Google, abrir tu ficha y encontrar dónde se escribe</strong> son demasiados pasos para un favor.</p>
         <p>Y mientras eso pasa, alguien que no te conoce está decidiendo entre tu negocio y el de al lado, con su teléfono enfrente. Lo único que va a ver son <strong>las estrellas y las opiniones</strong>.</p>
         <p>Por eso el exhibidor no se queda pegado en la barra: <strong>tu mesero lo lleva con la cuenta</strong>. El cliente solo lo toca con su teléfono y deja su reseña ahí mismo, en un segundo, antes de irse.</p>
@@ -707,23 +708,23 @@ p{margin:0}
 <!-- ================= PASOS ================= -->
 <section class="steps sec">
   <div class="wrap">
-    <div class="reveal" style="max-width:620px">
+    <div style="max-width:620px">
       <span class="eyebrow"><span class="dot"></span>¿Qué pasa cuando lo ordenas?</span>
       <h2 class="h2" style="margin-top:18px">Tres pasos y empieza a juntar reseñas sola</h2>
     </div>
 
     <div class="steps-grid">
-      <div class="step reveal">
+      <div class="step">
         <span class="step-num">Paso 1</span>
         <h3>Se va directo a tu puerta</h3>
         <p>Te mandamos tu guía el mismo día y ves dónde va hasta que toca tu puerta.</p>
       </div>
-      <div class="step reveal">
+      <div class="step">
         <span class="step-num">Paso 2</span>
         <h3>Lo configuras desde tu teléfono</h3>
         <p>Te llega a tu correo el enlace de tu exhibidor con los pasos para grabarlo. En un par de minutos queda listo, sin técnico.</p>
       </div>
-      <div class="step reveal">
+      <div class="step">
         <span class="step-num">Paso 3</span>
         <h3>Empieza a juntar reseñas sola</h3>
         <p>Tu mesero lo lleva a la mesa con la cuenta. El cliente lo toca y escribe su reseña ahí mismo.</p>
@@ -735,7 +736,7 @@ p{margin:0}
 <!-- ================= PRECIOS ================= -->
 <section class="pricing sec" id="precios">
   <div class="wrap">
-    <div class="pricing-head reveal">
+    <div class="pricing-head">
       <span class="eyebrow" style="justify-content:center"><span class="dot"></span>Precios</span>
       <h2 class="h2" style="margin-top:18px">¿Con cuántos arrancas?</h2>
       <p class="lead">Elige el modelo y la cantidad. Mientras más pidas, menos pagas por unidad. Es <strong style="color:var(--ink)">pago único</strong>, sin mensualidad.</p>
@@ -748,7 +749,7 @@ p{margin:0}
     <div class="plan-grid">
 
       <!-- SENCILLO -->
-      <div class="plan reveal" data-plan="sencillo">
+      <div class="plan" data-plan="sencillo">
         <div class="plan-name">Exhibidor sencillo</div>
         <h3>QR + NFC</h3>
         <p class="plan-desc">Un turno tranquilo, una mesa a la vez. La placa lista para funcionar.</p>
@@ -779,7 +780,7 @@ p{margin:0}
       </div>
 
       <!-- PERSONALIZADO -->
-      <div class="plan featured reveal" data-plan="personalizado">
+      <div class="plan featured" data-plan="personalizado">
         <div class="plan-tag alt">Mejor opción</div>
         <div class="plan-name">Exhibidor personalizado</div>
         <h3>Con tu logo</h3>
@@ -811,7 +812,7 @@ p{margin:0}
       </div>
 
       <!-- PREMIUM -->
-      <div class="plan reveal" data-plan="premium">
+      <div class="plan" data-plan="premium">
         <div class="plan-tag">Premium</div>
         <div class="plan-name">Exhibidor personalizado</div>
         <h3>Premium</h3>
@@ -851,7 +852,7 @@ p{margin:0}
   <div class="wrap">
     <div class="config-grid">
 
-      <div class="reveal">
+      <div>
         <span class="eyebrow on-dark"><span class="dot"></span>O con tu logo</span>
         <h2 class="h2" style="margin-top:18px">Mira tu exhibidor con tu logo <span class="grad">antes de pagarlo</span></h2>
         <p class="lead">Con tu logo, tu exhibidor se ve como parte de tu servicio, no como un anuncio pegado en la mesa.</p>
@@ -881,7 +882,7 @@ p{margin:0}
       </div>
 
       <!-- PANEL -->
-      <div class="panel reveal" id="pedir">
+      <div class="panel" id="pedir">
         <div class="panel-step">
           <span class="n">1</span>
           <label for="biz">Busca tu negocio</label>
@@ -958,7 +959,7 @@ p{margin:0}
 <!-- ================= SERVICIO MENSUAL ================= -->
 <section class="service sec" id="servicio">
   <div class="wrap">
-    <div class="service-card reveal">
+    <div class="service-card">
       <div class="service-body">
         <span class="eyebrow"><span class="dot"></span>Servicio recurrente</span>
         <h3 style="margin-top:16px">Mejora de calificaciones en Google y posicionamiento</h3>
@@ -996,12 +997,12 @@ p{margin:0}
 <!-- ================= FAQ ================= -->
 <section class="faq sec" id="faq">
   <div class="wrap">
-    <div class="faq-head reveal">
+    <div class="faq-head">
       <span class="eyebrow" style="justify-content:center"><span class="dot"></span>Preguntas frecuentes</span>
       <h2 class="h2" style="margin-top:18px">Si te lo preguntas, ya lo respondimos</h2>
     </div>
 
-    <div class="faq-list reveal">
+    <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
           ¿Y si mis meseros no lo usan?
@@ -1056,13 +1057,13 @@ p{margin:0}
 <!-- ================= GARANTÍA ================= -->
 <section class="guarantee sec">
   <div class="wrap">
-    <div class="shield reveal">
+    <div class="shield">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
     </div>
     <span class="eyebrow on-dark" style="justify-content:center"><span class="dot"></span>Garantía · Riesgo 0</span>
-    <h2 class="h2 reveal" style="margin-top:18px">Absorbo todo el riesgo para que pruebes este sistema</h2>
-    <p class="lead on-dark reveal">Mínimo <strong style="color:#fff">15 reseñas nuevas en máximo 60 días</strong> o te regreso tu dinero y te quedas con los exhibidores.</p>
-    <div class="reveal">
+    <h2 class="h2" style="margin-top:18px">Absorbo todo el riesgo para que pruebes este sistema</h2>
+    <p class="lead on-dark">Mínimo <strong style="color:#fff">15 reseñas nuevas en máximo 60 días</strong> o te regreso tu dinero y te quedas con los exhibidores.</p>
+    <div>
       <a href="#precios" class="btn btn-primary">Quiero mis exhibidores sin riesgo</a>
     </div>
   </div>
@@ -1072,14 +1073,14 @@ p{margin:0}
 <section class="about sec">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-photo reveal">
+      <div class="about-photo">
         <div class="inner">
           <div class="initials">S</div>
           <h4>Santiago</h4>
           <p>Fundador · Cronos6xlab</p>
         </div>
       </div>
-      <div class="about-copy reveal">
+      <div class="about-copy">
         <span class="eyebrow"><span class="dot"></span>Quiénes somos</span>
         <h2 class="h2" style="margin-top:18px">Estuve en +20 negocios y vi perderse siempre el mismo momento</h2>
         <p>Crecí trabajando adentro de negocios como el tuyo. Desde adentro se ve algo que desde afuera no: <strong>cuando el cliente sale contento, no pasa nada. Cuando sale molesto, sí escribe.</strong></p>
@@ -1095,9 +1096,9 @@ p{margin:0}
 <section class="final sec">
   <div class="wrap">
     <span class="eyebrow on-dark" style="justify-content:center"><span class="dot"></span>Último paso</span>
-    <h2 class="h2 reveal" style="margin-top:18px">Mañana vuelves a llenar el lugar.<br><span class="grad">¿Google se va a enterar esta vez?</span></h2>
-    <p class="lead on-dark reveal">Llega con guía y lo dejas listo en un par de minutos. Cada mes te llega tu reporte por correo, y el riesgo lo absorbo yo.</p>
-    <div class="btns reveal">
+    <h2 class="h2" style="margin-top:18px">Mañana vuelves a llenar el lugar.<br><span class="grad">¿Google se va a enterar esta vez?</span></h2>
+    <p class="lead on-dark">Llega con guía y lo dejas listo en un par de minutos. Cada mes te llega tu reporte por correo, y el riesgo lo absorbo yo.</p>
+    <div class="btns">
       <a href="#precios" class="btn btn-primary">Pedir mis exhibidores</a>
       <a href="#personaliza" class="btn btn-ghost-dark">Personalizarlos con mi logo</a>
     </div>
@@ -1131,204 +1132,264 @@ p{margin:0}
 </footer>
 
 <script>
-/* ================= PRECIOS ================= */
-const PLANS = {
-  sencillo: {
-    1:  {total: 150,  unit: 150},
-    3:  {total: 399,  unit: 133},
-    5:  {total: 600,  unit: 120},
-    10: {total: 999,  unit: 99.99}
-  },
-  personalizado: {
-    1:  {total: 300,  unit: 300},
-    3:  {total: 810,  unit: 270},
-    5:  {total: 1200, unit: 240},
-    10: {total: 2100, unit: 210}
-  },
-  premium: {
-    1:  {total: 810,  unit: 810},
-    3:  {total: 2250, unit: 750},
-    5:  {total: 3600, unit: 720},
-    10: {total: 6600, unit: 660}
-  }
-};
+/* =========================================================
+   1) MARCA DE JS ACTIVO
+   ========================================================= */
+document.documentElement.classList.add('js');
 
-const money = n => '$' + n.toLocaleString('es-MX', {
-  minimumFractionDigits: Number.isInteger(n) ? 0 : 2,
-  maximumFractionDigits: 2
-});
+/* =========================================================
+   2) FAILSAFE: pase lo que pase, todo se revela
+   ========================================================= */
+function revelarTodo(){
+  var els = document.querySelectorAll('.reveal');
+  for (var i = 0; i < els.length; i++) els[i].classList.add('in');
+}
+window.addEventListener('load', function(){ setTimeout(revelarTodo, 700); });
+setTimeout(revelarTodo, 2500);
 
-/* ================= TARJETAS DE PLAN ================= */
-document.querySelectorAll('.plan').forEach(card => {
-  const key = card.dataset.plan;
-  const plan = PLANS[key];
-  const pills = card.querySelectorAll('.qty-pills button');
-  const elTotal = card.querySelector('.price-total');
-  const elUnit  = card.querySelector('.price-unit');
-  const elWas   = card.querySelector('.price-was');
-  const elSave  = card.querySelector('.price-save');
+/* =========================================================
+   3) UTILIDAD DE MONEDA
+   ========================================================= */
+function money(n){
+  return '$' + n.toLocaleString('es-MX', {
+    minimumFractionDigits: Number.isInteger(n) ? 0 : 2,
+    maximumFractionDigits: 2
+  });
+}
 
-  function render(qty){
-    const d = plan[qty];
-    const base = plan[1].total;
-
-    elTotal.textContent = money(d.total);
-    elUnit.textContent  = money(d.unit) + ' por unidad';
-
-    if (qty === 1){
-      elWas.textContent = '—';
-      elWas.classList.add('empty');
-      elSave.textContent = 'Ahorras $0';
-      elSave.classList.add('empty');
-    } else {
-      const sueltas = base * qty;
-      const ahorro  = sueltas - d.total;
-      elWas.textContent = 'Sueltas serían ' + money(sueltas);
-      elWas.classList.remove('empty');
-      elSave.textContent = 'Te ahorras ' + money(ahorro);
-      elSave.classList.remove('empty');
+/* =========================================================
+   4) PRECIOS DE LAS TARJETAS
+   ========================================================= */
+try {
+  var PLANS = {
+    sencillo: {
+      1:  {total: 150,  unit: 150},
+      3:  {total: 399,  unit: 133},
+      5:  {total: 600,  unit: 120},
+      10: {total: 999,  unit: 99.99}
+    },
+    personalizado: {
+      1:  {total: 300,  unit: 300},
+      3:  {total: 810,  unit: 270},
+      5:  {total: 1200, unit: 240},
+      10: {total: 2100, unit: 210}
+    },
+    premium: {
+      1:  {total: 810,  unit: 810},
+      3:  {total: 2250, unit: 750},
+      5:  {total: 3600, unit: 720},
+      10: {total: 6600, unit: 660}
     }
-  }
-
-  pills.forEach(btn => {
-    btn.addEventListener('click', () => {
-      pills.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      render(Number(btn.dataset.qty));
-    });
-  });
-
-  render(1);
-});
-
-/* ================= CONFIGURADOR ================= */
-const TIPOS = {
-  personalizado: {1:300, 3:270, 5:240, 10:210, base:300, nombre:'Personalizado'},
-  premium:       {1:810, 3:750, 5:720, 10:660, base:810, nombre:'Premium'}
-};
-
-let cfgQty = 3;
-let cfgAcabado = 'personalizado';
-
-const qtyVal   = document.getElementById('qtyVal');
-const qtyLabel = document.getElementById('qtyLabel');
-const totalVal = document.getElementById('totalVal');
-const unitVal  = document.getElementById('unitVal');
-const minus    = document.getElementById('minus');
-const plus     = document.getElementById('plus');
-const ctaPedido= document.getElementById('ctaPedido');
-
-function unitPriceFor(qty, tabla){
-  if (qty >= 10) return tabla[10];
-  if (qtyb >= 5)  return tabla[5];
-  ifiz (qty >='). 3)value  return tabla[3];
-  return tabla[1];
-}
-
-.trimfunction renderConfig(){
-  const tabla = TIPOS[cfgAcabado];
-  const unit  = unitPriceFor(cfgQty, tabla);
-  const total = unit * cfgQty;
-
-  qtyVal.textContent   = cfgQty;
-  qtyLabel.textContent = cfgQty + (cfgQty === 1 ? ' exhibidor con tu logo' : ' exhibidores con tu logo');
-  totalVal.textContent = money(total);
-  unitVal.textContent  = money(unit) + ' por unidad · antes ' + money(tabla.base);
-}
-
-minus.addEventListener('click', () => { if (cfgQty > 1) { cfgQty--; renderConfig(); } });
-plus.addEventListener('click',  () => { if (cfgQty < 50) { cfgQty++; renderConfig(); } });
-
-document.querySelectorAll('#acabado button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('#acabado button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    cfgAcabado = btn.dataset.val;
-    renderConfig();
-  });
-});
-
-document.querySelectorAll('#destino button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('#destino button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-renderConfig();
-
-/* ================= LOGO PREVIEW ================= */
-const logoInput = document.getElementById('logo');
-const logoThumb = document.getElementById('logoThumb');
-const logoLabel = document.getElementById('logoLabel');
-
-logoInput.addEventListener('change', e => {
-  const file = e.target.files && e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    logoThumb.innerHTML = '<img src="' + ev.target.result + '" alt="Tu logo">';
-    logoLabel.textContent = file.name.length > 26 ? file.name.slice(0, 24) + '…' : file.name;
   };
-  reader.readAsDataURL(file);
-});
 
-/* ================= CTA CONFIGURADOR ================= */
-ctaPedido.addEventListener('click', e => {
-  e.preventDefault();
-  const negocio = document.getElementById('() || 'mi negocio';
-  const destino = document.querySelector('#destino button.active').dataset.val;
-  const acabado = TIPOS[cfgAcabado].nombre;
-  const unit    = unitPriceFor(cfgQty, TIPOS[cfgAcabado]);
-  const total   = unit * cfgQty;
+  var tarjetas = document.querySelectorAll('.plan');
+  for (var t = 0; t < tarjetas.length; t++){
+    (function(card){
+      var plan = PLANS[card.getAttribute('data-plan')];
+      if (!plan) return;
 
-  const msg =
-    'Hola Cronos6xlab 👋%0A%0A' +
-    'Quiero pedir exhibidores QR/NFC con mi logo.%0A' +
-    '• Negocio: ' + encodeURIComponent(negocio) + '%0A' +
-    '• Reseñas para: ' + encodeURIComponent(destino) + '%0A' +
-    '• Acabado: ' + encodeURIComponent(acabado) + '%0A' +
-    '• Cantidad: ' + cfgQty + '%0A' +
-    '• Total: ' + encodeURIComponent(money(total)) + '%0A%0A' +
-    '¿Me pasan los siguientes pasos?';
+      var pills   = card.querySelectorAll('.qty-pills button');
+      var elTotal = card.querySelector('.price-total');
+      var elUnit  = card.querySelector('.price-unit');
+      var elWas   = card.querySelector('.price-was');
+      var elSave  = card.querySelector('.price-save');
+      var base    = plan[1].total;
 
-  window.open('https://wa.me/5210000000000?text=' + msg, '_blank');
-});
+      function render(qty){
+        var d = plan[qty];
+        if (!d) return;
+        elTotal.textContent = money(d.total);
+        elUnit.textContent  = money(d.unit) + ' por unidad';
 
-/* ================= FAQ ================= */
-document.querySelectorAll('.faq-item').forEach(item => {
-  const btn = item.querySelector('.faq-q');
-  const ans = item.querySelector('.faq-a');
+        if (qty === 1){
+          elWas.textContent = '—';
+          elWas.classList.add('empty');
+          elSave.textContent = 'Ahorras $0';
+          elSave.classList.add('empty');
+        } else {
+          var sueltas = base * qty;
+          elWas.textContent = 'Sueltas serían ' + money(sueltas);
+          elWas.classList.remove('empty');
+          elSave.textContent = 'Te ahorras ' + money(sueltas - d.total);
+          elSave.classList.remove('empty');
+        }
+      }
 
-  btn.addEventListener('click', () => {
-    const open = item.classList.contains('open');
+      for (var p = 0; p < pills.length; p++){
+        pills[p].addEventListener('click', function(){
+          for (var k = 0; k < pills.length; k++) pills[k].classList.remove('active');
+          this.classList.add('active');
+          render(Number(this.getAttribute('data-qty')));
+        });
+      }
 
-    document.querySelectorAll('.faq-item.open').forEach(o => {
-      o.classList.remove('open');
-      o.querySelector('.faq-a').style.maxHeight = null;
+      render(1);
+    })(tarjetas[t]);
+  }
+} catch(e){ console.warn('Precios:', e); }
+
+/* =========================================================
+   5) CONFIGURADOR
+   ========================================================= */
+try {
+  var TIPOS = {
+    personalizado: {1:300, 3:270, 5:240, 10:210, base:300, nombre:'Personalizado'},
+    premium:       {1:810, 3:750, 5:720, 10:660, base:810, nombre:'Premium'}
+  };
+
+  var cfgQty     = 3;
+  var cfgAcabado = 'personalizado';
+
+  var qtyVal    = document.getElementById('qtyVal');
+  var qtyLabel  = document.getElementById('qtyLabel');
+  var totalVal  = document.getElementById('totalVal');
+  var unitVal   = document.getElementById('unitVal');
+  var minus     = document.getElementById('minus');
+  var plus      = document.getElementById('plus');
+  var ctaPedido = document.getElementById('ctaPedido');
+
+  function unitPriceFor(qty, tabla){
+    if (qty >= 10) return tabla[10];
+    if (qty >= 5)  return tabla[5];
+    if (qty >= 3)  return tabla[3];
+    return tabla[1];
+  }
+
+  function renderConfig(){
+    var tabla = TIPOS[cfgAcabado];
+    var unit  = unitPriceFor(cfgQty, tabla);
+    var total = unit * cfgQty;
+
+    qtyVal.textContent   = cfgQty;
+    qtyLabel.textContent = cfgQty + (cfgQty === 1 ? ' exhibidor con tu logo' : ' exhibidores con tu logo');
+    totalVal.textContent = money(total);
+    unitVal.textContent  = money(unit) + ' por unidad · antes ' + money(tabla.base);
+  }
+
+  if (minus) minus.addEventListener('click', function(){ if (cfgQty > 1){ cfgQty--; renderConfig(); } });
+  if (plus)  plus.addEventListener('click',  function(){ if (cfgQty < 50){ cfgQty++; renderConfig(); } });
+
+  var btnAcabado = document.querySelectorAll('#acabado button');
+  for (var a = 0; a < btnAcabado.length; a++){
+    btnAcabado[a].addEventListener('click', function(){
+      for (var k = 0; k < btnAcabado.length; k++) btnAcabado[k].classList.remove('active');
+      this.classList.add('active');
+      cfgAcabado = this.getAttribute('data-val');
+      renderConfig();
     });
+  }
 
-    if (!open){
-      item.classList.add('open');
-      ans.style.maxHeight = ans.scrollHeight + 'px';
-    }
-  });
-});
+  var btnDestino = document.querySelectorAll('#destino button');
+  for (var dz = 0; dz < btnDestino.length; dz++){
+    btnDestino[dz].addEventListener('click', function(){
+      for (var k = 0; k < btnDestino.length; k++) btnDestino[k].classList.remove('active');
+      this.classList.add('active');
+    });
+  }
 
-/* ================= REVEAL ON SCROLL ================= */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('in');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  renderConfig();
 
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  /* --- Vista previa del logo --- */
+  var logoInput = document.getElementById('logo');
+  var logoThumb = document.getElementById('logoThumb');
+  var logoLabel = document.getElementById('logoLabel');
 
-/* ================= AÑO ================= */
-document.getElementById('year').textContent = new Date().getFullYear();
+  if (logoInput){
+    logoInput.addEventListener('change', function(e){
+      var file = e.target.files && e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        logoThumb.innerHTML = '<img src="' + ev.target.result + '" alt="Tu logo">';
+        logoLabel.textContent = file.name.length > 26 ? file.name.slice(0,24) + '…' : file.name;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* --- CTA del configurador → WhatsApp --- */
+  if (ctaPedido){
+    ctaPedido.addEventListener('click', function(e){
+      e.preventDefault();
+
+      var negocio = (document.getElementById('biz').value || '').trim() || 'mi negocio';
+      var activoDestino = document.querySelector('#destino button.active');
+      var destino = activoDestino ? activoDestino.getAttribute('data-val') : 'Google';
+      var acabado = TIPOS[cfgAcabado].nombre;
+      var unit    = unitPriceFor(cfgQty, TIPOS[cfgAcabado]);
+      var total   = unit * cfgQty;
+
+      var msg = 'Hola Cronos6xlab 👋\n\n' +
+        'Quiero pedir exhibidores QR/NFC con mi logo.\n' +
+        '• Negocio: ' + negocio + '\n' +
+        '• Reseñas para: ' + destino + '\n' +
+        '• Acabado: ' + acabado + '\n' +
+        '• Cantidad: ' + cfgQty + '\n' +
+        '• Total: ' + money(total) + '\n\n' +
+        '¿Me pasan los siguientes pasos?';
+
+      window.open('https://wa.me/5210000000000?text=' + encodeURIComponent(msg), '_blank');
+    });
+  }
+} catch(e){ console.warn('Configurador:', e); }
+
+/* =========================================================
+   6) FAQ
+   ========================================================= */
+try {
+  var items = document.querySelectorAll('.faq-item');
+  for (var i = 0; i < items.length; i++){
+    (function(item){
+      var btn = item.querySelector('.faq-q');
+      var ans = item.querySelector('.faq-a');
+      if (!btn || !ans) return;
+
+      btn.addEventListener('click', function(){
+        var abierto  = item.classList.contains('open');
+        var abiertos = document.querySelectorAll('.faq-item.open');
+
+        for (var j = 0; j < abiertos.length; j++){
+          abiertos[j].classList.remove('open');
+          abiertos[j].querySelector('.faq-a').style.maxHeight = null;
+        }
+
+        if (!abierto){
+          item.classList.add('open');
+          ans.style.maxHeight = ans.scrollHeight + 'px';
+        }
+      });
+    })(items[i]);
+  }
+} catch(e){ console.warn('FAQ:', e); }
+
+/* =========================================================
+   7) REVEAL AL SCROLL (con respaldo)
+   ========================================================= */
+try {
+  var reveals = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++){
+        if (entries[i].isIntersecting){
+          entries[i].target.classList.add('in');
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
+    for (var r = 0; r < reveals.length; r++) io.observe(reveals[r]);
+  } else {
+    revelarTodo();
+  }
+} catch(e){ revelarTodo(); }
+
+/* =========================================================
+   8) AÑO EN EL FOOTER
+   ========================================================= */
+try {
+  document.getElementById('year').textContent = new Date().getFullYear();
+} catch(e){}
 </script>
 </body>
 </html>
