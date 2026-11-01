@@ -320,6 +320,59 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
 .notice p{font-size:12.5px;color:var(--ink);line-height:1.45}
 .notice strong{color:var(--wine);font-weight:540}
 
+/* ============ SERVICIO MENSUAL ============ */
+.service .wrap{position:relative;z-index:2}
+.service-card{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:0;
+  border-radius:var(--radius-card);overflow:hidden;
+  background:var(--paper);border:1px solid var(--mist);
+}
+@media(max-width:900px){.service-card{grid-template-columns:1fr}}
+.service-body{padding:40px 36px}
+@media(max-width:640px){.service-body{padding:28px 22px}}
+.service-body h2{margin:14px 0 12px}
+.service-body .lead{font-size:16px;margin-bottom:22px}
+.form-flow{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin:12px 0 24px;
+}
+@media(max-width:560px){.form-flow{grid-template-columns:1fr}}
+.form-label{
+  font-size:11px;font-weight:540;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--stone);margin-bottom:10px;
+}
+.flow-step{
+  background:var(--parchment);border:1px solid var(--mist);
+  border-radius:var(--radius-btn-sm);padding:14px 12px;text-align:center;
+}
+.flow-stars{
+  font-size:14px;font-weight:540;color:#c9a227;
+  letter-spacing:2px;margin-bottom:8px;
+}
+.flow-step div:last-child{
+  font-size:13px;color:var(--ink);font-weight:540;line-height:1.3;
+}
+.service-feats{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.service-feats li{
+  display:flex;gap:10px;font-size:14px;color:var(--ink);line-height:1.45;
+}
+.service-feats svg{width:16px;height:16px;color:var(--violet);flex:none;margin-top:2px}
+.service-side{
+  background:var(--wine);color:#fff;
+  padding:40px 36px;display:flex;flex-direction:column;justify-content:center;
+}
+@media(max-width:640px){.service-side{padding:28px 22px}}
+.service-side .price{
+  font-size:52px;font-weight:460;letter-spacing:-0.03em;line-height:1;color:#fff;
+}
+.service-side .price small{font-size:16px;font-weight:460;color:rgba(255,255,255,.7);letter-spacing:0}
+.service-side p{font-size:13.5px;color:rgba(255,255,255,.8);margin:12px 0 22px;line-height:1.5}
+.service-side .btn{
+  width:100%;background:var(--lilac);color:var(--ink);border-color:var(--lilac);
+}
+.service-side .btn:hover{background:var(--lilac-soft);border-color:var(--lilac-soft)}
+.service-side .fine{color:rgba(255,255,255,.6);margin-top:12px}
+
 /* ============ FAQ ============ */
 .faq-head{text-align:center;max-width:640px;margin:0 auto 40px}
 .faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--mist)}
@@ -373,7 +426,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
 <div class="announce">
   <span class="pill">SERVICIO</span>
   <span>Nosotros configuramos tu exhibidor · Tú solo nos dices qué quieres</span>
-  <a href="#personaliza">Ver cómo funciona →</a>
+  <a href="#servicio">Servicio de reporte mensual →</a>
 </div>
 
 <!-- NAV -->
@@ -386,7 +439,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
     <nav class="nav-links">
       <a href="#accesos">Accesos</a>
       <a href="#precios">Precios</a>
-      <a href="#personaliza">Cómo funciona</a>
+      <a href="#servicio">Servicio mensual</a>
       <a href="#faq">Preguntas</a>
     </nav>
     <div class="nav-actions">
@@ -651,7 +704,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
           <li>Calificar en Google</li>
           <li>Reseña en TripAdvisor</li>
           <li>Reseña en Yelp</li>
-          <li>Formulario dinámico (5 estrellas)</li>
+          <li>Formulario dinámico (con servicio mensual)</li>
         </ul>
       </div>
       <div class="access-card">
@@ -832,11 +885,11 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
           </li>
           <li>
             <span class="config-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
-            <div><b>Reporte mensual incluido</b><span>Cada mes te llega a tu correo cuántos toques, cuántas reseñas y qué accesos usan más.</span></div>
+            <div><b>Servicio de reporte opcional</b><span>Con $180/mes activas el formulario dinámico + reporte de puntos críticos y acciones a tomar. Es independiente del pago único del exhibidor.</span></div>
           </li>
           <li>
             <span class="config-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-            <div><b>Envío incluido a todo México</b><span>Es pago único, sin mensualidad. Llega configurado y listo para usar.</span></div>
+            <div><b>Envío incluido a todo México</b><span>El exhibidor es pago único, sin mensualidad. Llega configurado y listo para usar.</span></div>
           </li>
         </ul>
       </div>
@@ -918,6 +971,60 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
   </div>
 </section>
 
+<!-- SERVICIO MENSUAL -->
+<section class="service sec" id="servicio">
+  <div class="wrap">
+    <div class="service-card">
+      <div class="service-body">
+        <span class="eyebrow">Servicio mensual opcional · $180/mes</span>
+        <h2 class="h3">Formulario dinámico + reporte de acciones</h2>
+        <p class="lead">El complemento perfecto para tus exhibidores: capturamos la opinión completa —no solo la buena—, la analizamos y te decimos qué hacer con ella.</p>
+
+        <div class="form-label">Cómo funciona el formulario cuando tu cliente toca el exhibidor</div>
+        <div class="form-flow">
+          <div class="flow-step">
+            <div class="flow-stars">★★★★★</div>
+            <div>Va directo a Google</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-stars">★★★★</div>
+            <div>Formulario corto</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-stars">★★★ a ★</div>
+            <div>Formulario largo</div>
+          </div>
+        </div>
+
+        <ul class="service-feats">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Base de datos de todas las respuestas.</strong> Cada formulario se guarda automáticamente en un panel de opiniones.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Reporte mensual con puntos críticos.</strong> Analizamos los datos y te decimos qué acciones concretas tomar para subir tu calificación.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Tú también puedes revisar tus datos.</strong> Acceso al panel donde ves cómo se va llenando la base de datos de tu negocio.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Reporte de incremento en Google.</strong> Comparativa mes a mes de tus reseñas y tu calificación.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="service-side">
+        <div class="price">$180 <small>/ mes</small></div>
+        <p>Sin contrato forzoso. Cancela cuando quieras. Los exhibidores son tuyos para siempre; este servicio se cobra aparte del pago único.</p>
+        <a href="#personaliza" class="btn btn-primary">Activar el servicio</a>
+        <p class="fine">Se activa sobre tus exhibidores Cronos6xlab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq sec" id="faq">
   <div class="wrap">
@@ -967,7 +1074,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
           ¿Por qué la URL con accesos suma +30%?
           <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </button>
-        <div class="faq-a"><p>Porque además del exhibidor te configuramos la página con los accesos, los botones y la lógica de redirección (por ejemplo: si toca 5 estrellas va a Google, si toca menos va a un formulario). El precio base cubre el exhibidor con enlace directo a Google; los accesos unificados son un servicio adicional que puedes activar o no.</p></div>
+        <div class="faq-a"><p>Porque además del exhibidor te configuramos la página con los accesos, los botones y la lógica de redirección. El precio base cubre el exhibidor con enlace directo a Google; los accesos unificados son un servicio adicional que puedes activar o no.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
@@ -978,17 +1085,31 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
       </div>
       <div class="faq-item">
         <button class="faq-q">
-          ¿Puedo cambiar los accesos después?
+          ¿Cómo funciona el formulario dinámico?
           <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </button>
-        <div class="faq-a"><p>Sí. La URL es dinámica: escríbenos por WhatsApp y cambiamos accesos, orden o destino sin regrabar el exhibidor. Tú no haces nada, nosotros lo actualizamos.</p></div>
+        <div class="faq-a"><p>Cuando tu cliente toca el exhibidor, primero califica con estrellas. Si da 5 estrellas, va directo a Google. Si da 4 estrellas, aparece un formulario corto. Si da 3, 2 o 1 estrella, aparece un formulario más largo para entender qué pasó. Todas las respuestas se guardan en una base de datos que nosotros analizamos para detectar puntos críticos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Qué incluye el servicio de $180/mes?
+          <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Incluye: el formulario dinámico activo, la base de datos con todas las respuestas, el reporte mensual con puntos críticos detectados y acciones recomendadas, y acceso para que tú también revises tus propios datos cuando quieras. El reporte de incremento de calificación en Google también va incluido.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
           ¿Tengo que pagar algo cada mes?
           <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </button>
-        <div class="faq-a"><p>No. Es pago único y el exhibidor no cobra mensualidad. El reporte mensual tampoco se cobra.</p></div>
+        <div class="faq-a"><p>El exhibidor es pago único, sin mensualidad. Lo único que se cobra mensualmente es el servicio opcional de formulario dinámico + reporte de acciones a $180/mes. Si no lo contratas, no pagas nada más allá del exhibidor.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Puedo cambiar los accesos después?
+          <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Sí. La URL es dinámica: escríbenos por WhatsApp y cambiamos accesos, orden o destino sin regrabar el exhibidor. Tú no haces nada, nosotros lo actualizamos.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
@@ -1022,7 +1143,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
     <p class="lead">Un toque y tu cliente ve todo lo tuyo: reseña, WhatsApp, menú, ubicación. Tú nos dices qué quieres y nosotros lo configuramos todo.</p>
     <div class="final-btns">
       <a href="#precios" class="btn btn-primary">Pedir mis exhibidores</a>
-      <a href="#personaliza" class="btn btn-outline">Ver cómo funciona</a>
+      <a href="#servicio" class="btn btn-outline">Ver servicio de $180/mes</a>
     </div>
     <p class="fine">Mínimo 15 reseñas nuevas en máximo 60 días o te devolvemos tu dinero y te quedas con los exhibidores.</p>
   </div>
@@ -1044,7 +1165,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
         <ul>
           <li><a href="#precios">Precios</a></li>
           <li><a href="#accesos">Accesos</a></li>
-          <li><a href="#personaliza">Cómo funciona</a></li>
+          <li><a href="#servicio">Servicio mensual</a></li>
         </ul>
       </div>
       <div class="footer-col">
