@@ -898,7 +898,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
       <div class="panel" id="pedir">
         <div class="notice">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-          <p><strong>Esto no es un configurador automático.</strong> Nos mandas tu solicitud y te contactamos por WhatsApp para coordinar tu logo, los accesos y el diseño. <strong>Todo lo configuramos nosotros.</strong></p>
+          <p><strong>Esto no es un configurador automático.</strong> Nos mandas tu solicitud y te contactamos por WhatsApp al <strong>+52 56 6509 2869</strong> para coordinar tu logo, los accesos y el diseño. <strong>Todo lo configuramos nosotros.</strong></p>
         </div>
 
         <div class="panel-step"><span class="n">1</span><label for="biz">Nombre del negocio</label></div>
@@ -1046,7 +1046,7 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
           ¿Cómo les mando mi logo y mis accesos?
           <span class="faq-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </button>
-        <div class="faq-a"><p>Todo se coordina por WhatsApp. Después de tu pedido, te contactamos para que nos mandes tu logo, los accesos que quieres y cualquier referencia o instrucción de diseño. Nosotros nos encargamos del resto.</p></div>
+        <div class="faq-a"><p>Todo se coordina por WhatsApp al +52 56 6509 2869. Después de tu pedido, te contactamos para que nos mandes tu logo, los accesos que quieres y cualquier referencia o instrucción de diseño. Nosotros nos encargamos del resto.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
@@ -1179,7 +1179,8 @@ textarea.field{resize:vertical;min-height:84px;line-height:1.5}
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="https://wa.me/5210000000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://wa.me/525665092869" target="_blank" rel="noopener">WhatsApp: +52 56 6509 2869</a></li>
+          <li><a href="tel:+525665092869">Llamar: +52 56 6509 2869</a></li>
           <li><a href="mailto:hola@cronos6xlab.com">hola@cronos6xlab.com</a></li>
           <li><a href="#">Envíos</a></li>
         </ul>
@@ -1305,9 +1306,11 @@ function money(n){
 })();
 
 /* =========================================================
-   4) FORMULARIO DE SOLICITUD
+   4) FORMULARIO DE SOLICITUD → WhatsApp +52 56 6509 2869
    ========================================================= */
 (function(){
+  var WA_NUMBER = '525665092869';
+
   var PRICE = {
     sencillo:      {base:150, tiers:{1:150,3:133,5:120,10:99.99}, maxAcc:3,  nombre:'Sencillo'},
     personalizado: {base:300, tiers:{1:300,3:270,5:240,10:210},   maxAcc:6,  nombre:'Personalizado'},
@@ -1446,7 +1449,7 @@ function money(n){
       '• Total: ' + money(total) + '\n\n' +
       'Entiendo que ustedes configuran todo. ¿Cómo les mando mi logo y qué sigue?';
 
-    window.open('https://wa.me/5210000000000?text=' + encodeURIComponent(msg), '_blank');
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
   });
 
   render();
